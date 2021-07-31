@@ -1,26 +1,17 @@
 import React from "react"
-import Header from "../components/header/Header"
-import NavBarLinks from "../components/NavBarLinks/NavBarLinks"
-import TitlebarImageList from "../components/images/TitlebarImageList"
+import "../styles/global.scss"
+import BasicImageList from "../components/images/BasicImageList"
 import CardsCover from "../components/cards/CardsCover"
-import Footer from "../components/footer/Footer"
-import Container from "@material-ui/core/Container"
-import "../styles/global.scss";
+import Layout from "../components/Layout"
 
 export default function Home() {
 
   return (
-    <React.Fragment>
-      <Header />
-      <div className={"main-cover"}>
-        <Container className={"main-cover2"} maxWidth="sm" style={{background: "aliceblue"}}>
-          <NavBarLinks />
-          <TitlebarImageList />
-          <CardsCover />
-        </Container>
-      </div>
-
-      <Footer />
-    </React.Fragment>
+    <Layout>
+      <React.Fragment>
+        <BasicImageList />
+        <CardsCover />
+      </React.Fragment>
+    </Layout>
   )
 }
