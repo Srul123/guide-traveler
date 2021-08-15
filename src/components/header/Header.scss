@@ -9,6 +9,16 @@
                   90deg
           , #020024 0%, #0000fd 0%, #44bfdd 96%);
   h1 { color: white;
-    font-family: 'arvo', arvo; font-size: 34px; font-weight: 300; line-height: 40px; margin: 0 0 16px; }
+    font-family: 'arvo', arvo; font-size: 34px; font-weight: 300; line-height: 40px; margin: 0 0 16px;
+  }
+  h3 {
+    color: white;
+  }
+  .level1 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+  }
 }
 

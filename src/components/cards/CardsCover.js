@@ -5,8 +5,8 @@ import "./CardCover.scss";
 function CardsCover () {
     return (
       <div className={"cardsCover"}>
-        <OutlinedCard title={"Jerusalem"} info={"The beauty of the past"}/>
-        <OutlinedCard title={"Tel-Aviv"} info={"24 7 this exactly what is Tel Aviv City"}/>
+        <OutlinedCard title={"We are offering all kind of tours around israel"}
+                      info={"from one day tour up to two weeks and more, Catholic or jewish oriented"}/>
       </div>
     )
 }

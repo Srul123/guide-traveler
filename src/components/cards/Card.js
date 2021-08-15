@@ -5,6 +5,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { Link } from "gatsby"
 
 const useStyles = makeStyles({
   root: {
@@ -31,7 +32,7 @@ export default function OutlinedCard(props) {
     <Card className={classes.root} variant="outlined">
       <CardContent>
         <Typography className={classes.title} color="textSecondary" gutterBottom>
-          Tour of the Day
+          Tour for every one
         </Typography>
         <Typography variant="h5" component="h2">
           {props.title}
@@ -40,9 +41,13 @@ export default function OutlinedCard(props) {
           {props.info}
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button size="small">More about this Tour</Button>
-      </CardActions>
+      {/*<CardActions>*/}
+      {/*  <Button size="small">*/}
+      {/*    <Link to={"/about"}>*/}
+      {/*      Read more*/}
+      {/*    </Link>*/}
+      {/*  </Button>*/}
+      {/*</CardActions>*/}
     </Card>
   );
 }

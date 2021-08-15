@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/Layout"
 import ContactUsForm from "../components/contact-us-form/ContactUsForm"
 
-function Contact() {
+function PostTour() {
   return (
     <Layout>
       <div>
@@ -13,4 +13,4 @@ function Contact() {
   )
 }
 
-export default Contact
+export default PostTour
