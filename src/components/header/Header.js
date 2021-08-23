@@ -3,16 +3,23 @@ import "./Header.scss"
 import MenuListDropDownLanguage from "../menu/MenuListDropDownLanguage"
 import Button from "@material-ui/core/Button"
 import CallIcon from '@material-ui/icons/Call';
+import {useTranslation} from "gatsby-plugin-react-i18next";
+import { graphql } from "gatsby"
 
 function Header() {
+  const {t} = useTranslation();
   return (
     <header>
       <div className={"header"}>
-        <div className={"level1"}>
+        <div>
           <MenuListDropDownLanguage />
-          <h3>Pepe Tours</h3>
-          <Button style={{background:"forestgreen", color:"white"}} variant="contained"  href="tel:+18475555555">
-            <CallIcon /> Call now
+        </div>
+        <div>
+          <h3>{t("header_name")}</h3>
+        </div>
+        <div>
+          <Button style={{background:"forestgreen", color:"white", height: "100%"}} variant="contained"  href="tel:+18475555555">
+            <CallIcon /> {t("header_call_now")}
           </Button>
         </div>
       </div>
@@ -22,3 +29,17 @@ function Header() {
 }
 
 export default Header
+
+export const query = graphql`
+  query($language: String!) {
+    locales: allLocale(filter: {language: {eq: $language}}) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;

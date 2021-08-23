@@ -1,11 +1,14 @@
 import React from "react"
 import Layout from "../components/Layout"
 import Typography from "@material-ui/core/Typography"
-import CardContent from "@material-ui/core/CardContent"
-import CardActions from "@material-ui/core/CardActions"
-import Button from "@material-ui/core/Button"
 import makeStyles from "@material-ui/core/styles/makeStyles"
-import Card from "@material-ui/core/Card"
+import {graphql} from "gatsby";
+import {useTranslation} from "gatsby-plugin-react-i18next";
+import ImageGallery from "react-image-gallery"
+import defaultImage from "../../static/home/israel_flag.png"
+import holy_land_tour from "../../static/about/holy_land_tour.jpg";
+import holy_land from "../../static/about/holy_land.jpg";
+
 
 const useStyles = makeStyles({
   root: {
@@ -25,18 +28,43 @@ const useStyles = makeStyles({
   },
 });
 function About() {
+  const {t} = useTranslation();
   const classes = useStyles();
+  const images = [
+    {
+      original: holy_land
+    },
+    {
+      original: holy_land_tour
+    },
+
+  ];
+
+  const someComponent = props => {
+    // console.log(props.someProps.objectKey)
+    return <div>{/* {props.someProps.objectKey} */}</div>;
+  };
+
   const bull = <span className={classes.bullet}>•</span>;
   return (
     <Layout>
       <div style={{marginBottom:"2vh"}}>
+        <ImageGallery
+          items={images}
+          defaultImage={defaultImage}
+          showBullets={true}
+          showIndex={true}
+          showThumbnails={false}
+          lazyLoad={true}
+          showPlayButton={false}
+          renderCustomControls={someComponent}
+          // slideInterval = {"5000"}
+        />
         <Typography variant="h4" gutterBottom>
-          Tours significativos
+          {t("about_significant_tour")}
         </Typography>
         <Typography variant="h6" gutterBottom>
-          Mi nombre es Pepe Heiblum guía certificado de turismo en Israel.
-          Y quiero invitarte a tener una experiencia maravillosa, una experiencia significativa en la tierra de Israel, una experiencia que marque un “antes y un después” en tu vida.
-          No importa tu fe, religión o creencias, ven a tierra santa y visitaremos los lugares mas significativos para ti, yo te sugiero y juntos elaboramos tu excursión.
+          {t("about_explain")}
         </Typography>
       </div>
     </Layout>
@@ -44,3 +72,18 @@ function About() {
 }
 
 export default About
+
+
+export const query = graphql`
+  query($language: String!) {
+    locales: allLocale(filter: {language: {eq: $language}}) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;

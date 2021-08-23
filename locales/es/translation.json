@@ -1,0 +1,9 @@
+{
+  "app": {
+    "name": "Srul say i18next"
+  },
+  "Home": "Home test casa",
+  "HomePage": {
+    "title": " Your Guide to Explore the Beauty of ISRAEL"
+  }
+}

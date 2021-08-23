@@ -1,7 +1,7 @@
 .footer {
   margin-top: 2vh;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   background: lightgray;
   left: 0;
   bottom: 0;
@@ -16,6 +16,7 @@
 
   footer {
     display: flex;
+    justify-content: space-around;
   }
   section {
     width: 100%;
@@ -35,7 +36,12 @@
     width: 100%;
     text-align: left;
     font: bold 16px sans-serif;
-    padding: 55px 50px;
+    padding: 10px 5px;
+
+  }
+
+  .footer-left, .footer-distributed {
+
   }
 
   .footer-distributed .footer-left,
@@ -48,7 +54,7 @@
   /* Footer left */
 
   .footer-distributed .footer-left{
-    width: 40%;
+    //width: 40%;
   }
 
   /* The company logo */
@@ -89,7 +95,8 @@
   /* Footer Center */
 
   .footer-distributed .footer-center{
-    width: 35%;
+    text-align: center;
+
   }
 
   .footer-distributed .footer-center i{
@@ -155,7 +162,6 @@
     color:  lightsteelblue;
     font-size: 13px;
     font-weight: normal;
-    margin: 0;
   }
 
   .footer-distributed .footer-company-about span{
@@ -190,9 +196,17 @@
   /* If you don't want the footer to be responsive, remove these media queries */
 
   @media (max-width: 880px) {
-
+    footer {
+      display: flex;
+      justify-content: space-between;
+    }
+    .footer-center {
+      padding:15px;
+    }
     .footer-distributed{
       font: bold 14px sans-serif;
+    }
+    .footer-left {
     }
 
     .footer-distributed .footer-left,
@@ -200,7 +214,7 @@
     .footer-distributed .footer-right{
       display: block;
       width: 100%;
-      margin-bottom: 40px;
+      margin-bottom: 10px;
       text-align: center;
     }
 
@@ -209,5 +223,11 @@
     }
 
   }
+
+}
+
+// Large devices (desktops, 992px and up)
+@media (max-width: 992px) {
+
 
 }
