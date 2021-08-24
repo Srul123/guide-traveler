@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from "../components/Layout"
+import Layout from "../components/layout/Layout"
 import ContactUsForm from "../components/contact-us-form/ContactUsForm"
 import ContactDetails from "../components/contact-details/ContactDetails"
 import {graphql} from "gatsby";

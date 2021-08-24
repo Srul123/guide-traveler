@@ -10,18 +10,27 @@ import { graphql } from "gatsby"
 import { useTranslation } from "gatsby-plugin-react-i18next"
 import CardContent from "@material-ui/core/CardContent"
 import Card from "@material-ui/core/Card"
+import emailjs from 'emailjs-com';
 
 
 export default function ContactUsForm() {
   const { t } = useTranslation()
-  const handleSubmit = (event) => {
+  const sendEmail = (event) => {
     event.preventDefault()
     const data = new FormData(event.currentTarget)
-    // eslint-disable-next-line no-console
+    console.log(event.target);
     console.log({
+      name: data.get("name"),
       email: data.get("email"),
-      password: data.get("password")
+      subject: data.get("subject"),
+      message: data.get("message"),
     })
+    emailjs.sendForm('service_dykl3lr', 'template_4mckckg', event.target, 'user_IISNtcuoRKbdqKjdysksj')
+      .then((result) => {
+        console.log(result.text);
+      }, (error) => {
+        console.log(error.text);
+      });
   }
 
   return (
@@ -40,18 +49,18 @@ export default function ContactUsForm() {
               <EmailIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
-              Send me a message
+              {t("contact_form_title")}
             </Typography>
-            <Box component="form" onSubmit={handleSubmit} sx={{ mt: 3 }}>
+            <Box component="form" onSubmit={sendEmail} sx={{ mt: 3 }}>
               <Grid container spacing={2}>
                 <Grid item xs={12} sm={6}>
                   <TextField
-                    autoComplete="name"
-                    name="Name"
+                    // autoComplete="name"
+                    name="name"
                     required
                     fullWidth
                     id="name"
-                    label="Name"
+                    label={t("contact_form_label_name")}
                     autoFocus
                   />
                 </Grid>
@@ -60,27 +69,27 @@ export default function ContactUsForm() {
                     required
                     fullWidth
                     id="email"
-                    label="Email Address"
+                    label={t("contact_form_label_email")}
                     name="email"
-                    autoComplete="email"
+                    // autoComplete="email"
                   />
                 </Grid>
                 <Grid item xs={12} sm={12}>
                   <TextField
-                    autoComplete="subject"
-                    name="Subject"
+                    // autoComplete="subject"
+                    name="subject"
                     required
                     fullWidth
                     id="subject"
-                    label="Subject"
+                    label={t("contact_form_label_subject")}
                   />
                 </Grid>
                 <Grid item xs={12} sm={12}>
                   <TextField
                     required
                     id="outlined-multiline-static"
-                    name="Message"
-                    label="Message"
+                    name="message"
+                    label={t("contact_form_label_message")}
                     multiline
                     fullWidth
                     rows={5}
@@ -88,8 +97,8 @@ export default function ContactUsForm() {
                   />
                 </Grid>
               </Grid>
-              <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }} style={{ marginTop: "2vh",color:"white", background:"forestgreen" }}>
-                Send message
+              <Button type={"submit"} fullWidth variant="contained" sx={{ mt: 3, mb: 2 }} style={{ marginTop: "2vh",color:"white", background:"forestgreen" }}>
+                {t("contact_form_label_send")}
               </Button>
             </Box>
           </Box>

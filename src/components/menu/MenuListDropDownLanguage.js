@@ -8,7 +8,7 @@ import MenuItem from "@material-ui/core/MenuItem"
 import MenuList from "@material-ui/core/MenuList"
 import { makeStyles } from "@material-ui/core/styles"
 import LanguageIcon from "@material-ui/icons/Language"
-
+import "./MenuListDropDownLanguage.scss";
 
 import { Link, useI18next, useTranslation } from "gatsby-plugin-react-i18next"
 import { graphql } from "gatsby"
@@ -63,7 +63,7 @@ export default function MenuListDropDownLanguage() {
 
   return (
     <div className={classes.root}>
-      <div>
+      <div className={"drop-down-language"}>
         <Button
           ref={anchorRef}
           aria-controls={open ? "menu-list-grow" : undefined}

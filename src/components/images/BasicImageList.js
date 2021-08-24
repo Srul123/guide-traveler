@@ -22,8 +22,8 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
   },
   imageList: {
-    width: 500,
-    height: 450,
+    width: 700,
+    height: 550,
   },
 }));
 
@@ -65,7 +65,7 @@ export default function BasicImageList() {
     <div className={classes.root}>
       <ImageList rowHeight={160} className={classes.imageList} cols={4} style={{height:"unset",marginBottom: "5px"}}>
           <ImageListItem key={itemDataTitle[0].img} cols={4}>
-            <img src={itemDataTitle[0].img} alt={itemDataTitle[0].title} />
+            <img style={{height:"inherit"}} src={itemDataTitle[0].img} alt={itemDataTitle[0].title} />
             <ImageListItemBar
               title={itemDataTitle[0].title}
               subtitle={<span>by: {itemDataTitle[0].author}</span>}

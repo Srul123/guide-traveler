@@ -1,7 +1,7 @@
 import React from "react"
 import "../styles/global.scss"
 import BasicImageList from "../components/images/BasicImageList"
-import Layout from "../components/Layout"
+import Layout from "../components/layout/Layout"
 import {graphql} from "gatsby";
 import {useTranslation} from "gatsby-plugin-react-i18next";
 import Typography from "@material-ui/core/Typography"

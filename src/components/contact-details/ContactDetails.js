@@ -22,7 +22,7 @@ export default function ContactDetails() {
        <CardContent>
          <div className={"content"}>
            <Typography variant="h5" component="div">
-             Contact Details:
+             {t("contact_details_title")}:
            </Typography>
          </div>
          <div className={"content"}>
@@ -32,19 +32,21 @@ export default function ContactDetails() {
          </div>
          <div className={"content"}>
            <Typography style={{display:"flex"}}>
-            <PhoneIcon /><span style={{marginLeft:"1vw"}}></span> +972547152947
+            <PhoneIcon />
+            <span style={{marginLeft:"1vw"}}>+972547152947</span>
+             <span style={{marginLeft: "1vw"}}> {t("contact_details_phone")}</span>
            </Typography>
          </div>
          <div style={{display:"flex", justifyContent:"space-between"}}>
            <div>
              <div>
-               <span style={{whiteSpace: "nowrap"}}>Working time:</span>
+               <span style={{whiteSpace: "nowrap"}}>{t("contact_details_time")}:</span>
                <p style={{whiteSpace: "nowrap"}}>08:00 - 20:00</p>
              </div>
            </div>
            <div >
              <div >
-               <span style={{whiteSpace: "nowrap"}}>ISRAEL current time:</span>
+               <span style={{whiteSpace: "nowrap"}}>{t("contact_details_israel_time")}:</span>
                <p style={{whiteSpace: "nowrap"}}> {timestamp} </p>
              </div>
            </div>

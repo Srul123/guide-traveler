@@ -1,0 +1,17 @@
+.main-cover {
+  #container {
+    zoom: 115%;
+    @media (max-width: 992px) {
+      zoom: 100%;
+
+    }
+
+    // X-Large devices (large desktops, 1200px and up)
+    @media (min-width: 1200px) {
+      zoom: 115%;
+    }
+
+    // XX-Large devices (larger desktops, 1400px and up)
+    @media (min-width: 1400px) {  }
+  }
+}
