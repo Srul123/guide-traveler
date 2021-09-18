@@ -17,7 +17,7 @@ function Header() {
         <div>
           <h3>{t("header_name")}</h3>
         </div>
-        <div>
+        <div className="call_button">
           <Button style={{background:"forestgreen", color:"white", height: "100%"}} variant="contained"  href="tel:+972547152947">
             <CallIcon /> {t("header_call_now")}
           </Button>
