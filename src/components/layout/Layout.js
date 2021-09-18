@@ -11,7 +11,7 @@ function Layout ({children}) {
       <div className={"main-cover"}>
         <Header />
         <ButtonAppBar />
-        <Container id={"container"} maxWidth="sm" style={{background: "aliceblue", paddingBottom:"2vh", marginTop:"2vh"}}>
+        <Container id={"container"} maxWidth="md" style={{background: "aliceblue", paddingBottom:"2vh", marginTop:"2vh"}}>
             <CssBaseline />
           {/* content for each page */}
             {children}

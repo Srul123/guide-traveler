@@ -10,24 +10,27 @@ import { graphql } from "gatsby"
 import { useTranslation } from "gatsby-plugin-react-i18next"
 import CardContent from "@material-ui/core/CardContent"
 import Card from "@material-ui/core/Card"
+import PositionedSnackbar from "../../components/alerts/PositionedSnackbar"
 import emailjs from 'emailjs-com';
 
 
 export default function ContactUsForm() {
   const { t } = useTranslation()
+  const [name, setName] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [subject, setSubject] = React.useState("");
+  const [message, setMessage] = React.useState("");
+  const [alertMessage, setAlertMessage] = React.useState(false);
   const sendEmail = (event) => {
     event.preventDefault()
     const data = new FormData(event.currentTarget)
-    console.log(event.target);
-    console.log({
-      name: data.get("name"),
-      email: data.get("email"),
-      subject: data.get("subject"),
-      message: data.get("message"),
-    })
     emailjs.sendForm('service_dykl3lr', 'template_4mckckg', event.target, 'user_IISNtcuoRKbdqKjdysksj')
       .then((result) => {
-        console.log(result.text);
+        setAlertMessage(true);
+        setName("");
+        setEmail("");
+        setSubject("");
+        setMessage("");
       }, (error) => {
         console.log(error.text);
       });
@@ -62,6 +65,8 @@ export default function ContactUsForm() {
                     id="name"
                     label={t("contact_form_label_name")}
                     autoFocus
+                    onChange={(event)=>setName(event.target.value)}
+                    value={name}
                   />
                 </Grid>
                 <Grid item xs={12} sm={6}>
@@ -71,7 +76,8 @@ export default function ContactUsForm() {
                     id="email"
                     label={t("contact_form_label_email")}
                     name="email"
-                    // autoComplete="email"
+                    onChange={(event)=>setEmail(event.target.value)}
+                    value={email}
                   />
                 </Grid>
                 <Grid item xs={12} sm={12}>
@@ -82,6 +88,8 @@ export default function ContactUsForm() {
                     fullWidth
                     id="subject"
                     label={t("contact_form_label_subject")}
+                    onChange={(event)=>setSubject(event.target.value)}
+                    value={subject}
                   />
                 </Grid>
                 <Grid item xs={12} sm={12}>
@@ -94,6 +102,8 @@ export default function ContactUsForm() {
                     fullWidth
                     rows={5}
                     variant="outlined"
+                    onChange={(event)=>setMessage(event.target.value)}
+                    value={message}
                   />
                 </Grid>
               </Grid>
@@ -104,6 +114,9 @@ export default function ContactUsForm() {
           </Box>
         </CardContent>
       </Card>
+      <PositionedSnackbar
+       alertMessage={alertMessage}
+        setAlertMessage={setAlertMessage} />
     </div>
   )
 }

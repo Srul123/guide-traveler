@@ -6,10 +6,15 @@ import makeStyles from "@material-ui/core/styles/makeStyles"
 import Card from "@material-ui/core/Card"
 import ImageGallery from "react-image-gallery"
 import defaultImage from "../../../static/home/israel_flag.png"
-import bahim from "../../../static/about/haifa_bahim.jpg";
-import holy_land_tour from "../../../static/about/holy_land_tour.jpg";
+// import holy_land_tour from "../../../static/about/holy_land_tour.jpg";
 import {graphql} from "gatsby";
 import {useTranslation} from "gatsby-plugin-react-i18next";
+import jewish1 from "../../../static/tours/jewish/jewish1.jpeg"
+import jewish2 from "../../../static/tours/jewish/jewish2.jpeg"
+import jewish3 from "../../../static/tours/jewish/jewish3.jpeg"
+import jewish4 from "../../../static/tours/jewish/jewish4.jpeg"
+import jewish5 from "../../../static/tours/jewish/jewish5.jpeg"
+import jewish6 from "../../../static/tours/jewish/jewish6.jpeg"
 
 const useStyles = makeStyles({
   root: {
@@ -33,33 +38,32 @@ export default  function TourJewish() {
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
   const images = [
-
     {
-      original: holy_land_tour,
-      thumbnail: holy_land_tour
+      original: jewish1,
     },
     {
-      original: bahim
-
+      original: jewish2,
+    },
+    {
+      original: jewish3,
+    },
+    {
+      original: jewish4,
+    },
+    {
+      original: jewish5,
+    },
+    {
+      original: jewish6,
     }
-
   ];
+
   const someComponent = props => {
-    // console.log(props.someProps.objectKey)
     return <div>{/* {props.someProps.objectKey} */}</div>;
   }
   return (
     <Layout>
-      <ImageGallery
-        items={images}
-        defaultImage={defaultImage}
-        showBullets={true}
-        showIndex={true}
-        showThumbnails={false}
-        lazyLoad={true}
-        showPlayButton={false}
-        renderCustomControls={someComponent}
-      />
+
       <div>
         <Card className={classes.root} variant="outlined">
           <CardContent>
@@ -71,6 +75,20 @@ export default  function TourJewish() {
             </Typography>
           </CardContent>
         </Card>
+      </div>
+      <div>
+        <ImageGallery
+          items={images}
+          defaultImage={defaultImage}
+          showBullets={true}
+          showIndex={true}
+          showThumbnails={false}
+          lazyLoad={true}
+          showPlayButton={false}
+          renderCustomControls={someComponent}
+          slideInterval = {"5000"}
+
+        />
       </div>
     </Layout>
   )

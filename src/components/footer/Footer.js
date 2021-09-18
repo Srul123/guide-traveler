@@ -16,13 +16,6 @@ function Footer() {
 
             <h3><span>Pepe Tours</span></h3>
 
-            <p className="footer-links">
-              <Link to="/" className="link-1">{t("footer_home")}</Link>
-
-              <Link to="/about">{t("footer_about")}</Link>
-
-              <Link to="/contact">{t("footer_contact")}</Link>
-            </p>
 
             <p className="footer-company-name">Pepe Tours © 2021</p>
           </div>
@@ -31,7 +24,7 @@ function Footer() {
 
             <div>
               <i className="fa fa-map-marker"></i>
-              <p>Israel</p>
+              <p style={{whiteSpace: "nowrap"}}> {t("footer_certified_guide")} </p>
             </div>
 
             <div>
@@ -48,13 +41,8 @@ function Footer() {
 
           <div className="footer-right">
 
-            <p className="footer-company-about">
-              <span>{t("footer_what_we_are")}</span>
-              {t("footer_who_we_are")}
-            </p>
-
             <div className="footer-icons">
-             <Link to="#"><FacebookIcon /> Facebook</Link>
+             <a target="_blank"  href="https://www.facebook.com/Pepe-Tours-173128964820799"><FacebookIcon /><span style={{whiteSpace: "nowrap"}} id="pepe-tours-facebook" >Pepe Tours</span></a>
             </div>
 
           </div>

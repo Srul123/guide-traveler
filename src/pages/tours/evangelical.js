@@ -8,6 +8,12 @@ import ImageGallery from "react-image-gallery"
 import defaultImage from "../../../static/home/israel_flag.png"
 import {graphql} from "gatsby";
 import {useTranslation} from "gatsby-plugin-react-i18next";
+import cristianos_evangelicos_1 from "../../../static/tours/cristianos_evangelicos/cristianos_evangelicos_1.jpeg";
+import cristianos_evangelicos_2 from "../../../static/tours/cristianos_evangelicos/cristianos_evangelicos_2.jpeg";
+import cristianos_evangelicos_3 from "../../../static/tours/cristianos_evangelicos/cristianos_evangelicos_3.jpeg";
+import cristianos_evangelicos_4 from "../../../static/tours/cristianos_evangelicos/cristianos_evangelicos_4.jpeg";
+import cristianos_evangelicos_5 from "../../../static/tours/cristianos_evangelicos/cristianos_evangelicos_5.jpeg";
+import cristianos_evangelicos_6 from "../../../static/tours/cristianos_evangelicos/cristianos_evangelicos_6.jpeg";
 
 const useStyles = makeStyles({
   root: {
@@ -33,16 +39,22 @@ export default function TourEvangelical() {
   const bull = <span className={classes.bullet}>•</span>;
   const images = [
     {
-      original: "http://lorempixel.com/1000/600/nature/1/",
-      thumbnail: "http://lorempixel.com/250/150/nature/1/"
+      original: cristianos_evangelicos_3,
     },
     {
-      original: "http://lorempixel.com/1000/600/nature/2/",
-      thumbnail: "http://lorempixel.com/250/150/nature/2/"
+      original: cristianos_evangelicos_2,
     },
     {
-      original: "http://lorempixel.com/1000/600/nature/3/",
-      thumbnail: "http://lorempixel.com/250/150/nature/3/"
+      original: cristianos_evangelicos_4,
+    },
+    {
+      original: cristianos_evangelicos_5,
+    },
+    {
+      original: cristianos_evangelicos_1,
+    },
+    {
+      original: cristianos_evangelicos_6,
     }
 
   ];
@@ -53,16 +65,6 @@ export default function TourEvangelical() {
   return (
     <Layout>
       <div>
-        <ImageGallery
-          items={images}
-          defaultImage={defaultImage}
-          showBullets={true}
-          showIndex={true}
-          showThumbnails={false}
-          lazyLoad={true}
-          showPlayButton={false}
-          renderCustomControls={someComponent}
-        />
         <Card className={classes.root} variant="outlined">
           <CardContent>
             <Typography variant="h5" component="h2">
@@ -73,6 +75,20 @@ export default function TourEvangelical() {
             </Typography>
           </CardContent>
         </Card>
+      </div>
+      <div>
+        <ImageGallery
+          items={images}
+          defaultImage={defaultImage}
+          showBullets={true}
+          showIndex={true}
+          showThumbnails={false}
+          lazyLoad={true}
+          showPlayButton={false}
+          renderCustomControls={someComponent}
+          slideInterval = {"5000"}
+
+        />
       </div>
     </Layout>
   )

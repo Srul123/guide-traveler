@@ -13,7 +13,7 @@ export default function ContactDetails() {
 
   let timestamp = Date.now(); // This would be the timestamp you want to format
 
-  timestamp = new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit',  timeZone:'Asia/Jerusalem'}).format(timestamp);
+  timestamp = new Intl.DateTimeFormat('en-GB', {year: 'numeric', day: '2-digit',month: '2-digit', hour: '2-digit', minute: '2-digit', timeZone:'Asia/Jerusalem'}).format(timestamp);
 
   const {t} = useTranslation();
   return (
@@ -41,13 +41,15 @@ export default function ContactDetails() {
            <div>
              <div>
                <span style={{whiteSpace: "nowrap"}}>{t("contact_details_time")}:</span>
-               <p style={{whiteSpace: "nowrap"}}>08:00 - 20:00</p>
+               <br />
+               <span style={{whiteSpace: "nowrap"}}> {`${t("contact_details_time_days")} 08:00 - 20:00`}</span>
              </div>
            </div>
            <div >
              <div >
                <span style={{whiteSpace: "nowrap"}}>{t("contact_details_israel_time")}:</span>
-               <p style={{whiteSpace: "nowrap"}}> {timestamp} </p>
+               <br />
+               <span style={{whiteSpace: "nowrap"}}> {timestamp} </span>
              </div>
            </div>
          </div>

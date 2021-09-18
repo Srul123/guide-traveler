@@ -9,6 +9,7 @@ import MenuList from "@material-ui/core/MenuList"
 import { makeStyles } from "@material-ui/core/styles"
 import { graphql, Link } from "gatsby"
 import ExploreOutlinedIcon from "@material-ui/icons/ExploreOutlined"
+import AllInclusiveIcon from '@material-ui/icons/AllInclusive';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faStarOfDavid, faCross, faBible } from "@fortawesome/free-solid-svg-icons"
 import {useTranslation} from "gatsby-plugin-react-i18next";
@@ -86,6 +87,13 @@ export default function MenuListDropDownLinks() {
               <Paper>
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
+                    <MenuItem>
+                      <Link className={"option-tour"} style={{ color: "black", display: "flex", flexDirection: "row" }}
+                                     to={"/tours/general"} activeStyle={{ color: "dodgerblue" }}>
+                      <span><AllInclusiveIcon /></span>
+                      <span>{t("nav_links_tour_general")}</span>
+                    </Link>
+                    </MenuItem>
                     <MenuItem> <Link className={"option-tour"} style={{ color: "black", display: "flex", flexDirection: "row" }}
                                      to={"/tours/catholic"} activeStyle={{ color: "dodgerblue" }}>
                       <span><FontAwesomeIcon icon={faBible} size="1x" /></span>
