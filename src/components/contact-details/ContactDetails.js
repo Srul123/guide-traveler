@@ -40,14 +40,14 @@ export default function ContactDetails() {
          <div style={{display:"flex", justifyContent:"space-between"}}>
            <div>
              <div>
-               <span style={{whiteSpace: "nowrap"}}>{t("contact_details_time")}:</span>
+               <span style={{whiteSpace: "nowrap"}}>{t("contact_details_time")}</span>
                <br />
                <span style={{whiteSpace: "nowrap"}}> {`${t("contact_details_time_days")} 08:00 - 20:00`}</span>
              </div>
            </div>
            <div >
              <div >
-               <span style={{whiteSpace: "nowrap"}}>{t("contact_details_israel_time")}:</span>
+               <span style={{whiteSpace: "nowrap"}}>{t("contact_details_israel_time")}</span>
                <br />
                <span style={{whiteSpace: "nowrap"}}> {timestamp} </span>
              </div>

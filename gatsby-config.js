@@ -5,8 +5,20 @@
  */
 
 module.exports = {
-  /* Your site config here */
+  /* Your site config here D:\Israel Heiblum\projects\pepe_project\guide-traveler\static\home */
   plugins: [
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: 'Pepe Tours Logo',
+        short_name: 'Pepe Tours',
+        start_url: '/',
+        background_color: '#f7f0eb',
+        theme_color: '#a2466c',
+        display: 'standalone',
+        icon: 'static/home/israeli_flag.jpg',
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -22,7 +34,7 @@ module.exports = {
       options: {
         localeJsonSourceName: `locale`, // name given to `gatsby-source-filesystem` plugin.
         languages: [`en`, `es`],
-        defaultLanguage: `en`,
+        defaultLanguage: `es`,
         // if you are using Helmet, you must include siteUrl, and make sure you add http:https
         siteUrl: `https://example.com/`,
         // you can pass any i18next options

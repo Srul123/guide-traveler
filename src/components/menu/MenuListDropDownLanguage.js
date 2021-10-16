@@ -17,7 +17,8 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     color: "white",
-    zIndex: 0
+    zIndex: 0,
+    minWidth:"auto"
   },
   paper: {
     marginRight: theme.spacing(2)
@@ -62,7 +63,7 @@ export default function MenuListDropDownLanguage() {
   }, [open])
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} style={{minWidth:"auto !important"}} >
       <div className={"drop-down-language"}>
         <Button
           ref={anchorRef}

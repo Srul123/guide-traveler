@@ -95,13 +95,14 @@ export default function ContactUsForm() {
                 <Grid item xs={12} sm={12}>
                   <TextField
                     required
-                    id="outlined-multiline-static"
+                    id="standard-multiline-flexible"
                     name="message"
                     label={t("contact_form_label_message")}
                     multiline
                     fullWidth
                     rows={5}
-                    variant="outlined"
+                    // variant="outlined"
+                    // style={{border: "1px solid"}}
                     onChange={(event)=>setMessage(event.target.value)}
                     value={message}
                   />

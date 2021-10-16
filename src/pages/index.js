@@ -2,32 +2,33 @@ import React from "react"
 import "../styles/global.scss"
 import BasicImageList from "../components/images/BasicImageList"
 import Layout from "../components/layout/Layout"
-import {graphql} from "gatsby";
-import {useTranslation} from "gatsby-plugin-react-i18next";
+import { graphql } from "gatsby"
+import { useTranslation } from "gatsby-plugin-react-i18next"
 import Typography from "@material-ui/core/Typography"
 import ImageGallery from "react-image-gallery"
 import abrahamic_religions from "../../static/home/abrahamic-religions.jpg"
 import about_1 from "../../static/home/about_1.jpeg"
 import defaultImage from "../../static/home/israel_flag.png"
+import israeli_flag from "../../static/home/israeli_flag.jpg"
 
 
 export default function Home() {
-  const {t} = useTranslation();
+  const { t } = useTranslation()
   const images = [
     {
       original: abrahamic_religions,
-      description: "Pepe Tours",
+      description: "Pepe Tours"
 
     },
     {
       original: about_1,
-      description: `Pepe Heiblum - ${t("about_explain_tourist")}`,
-    },
-  ];
+      description: `Pepe Heiblum - ${t("about_explain_tourist")}`
+    }
+  ]
 
   const someComponent = props => {
     // console.log(props.someProps.objectKey)
-    return <div>{/* {props.someProps.objectKey} */}</div>;
+    return <div>{/* {props.someProps.objectKey} */}</div>
   }
   return (
     <Layout>
@@ -41,6 +42,9 @@ export default function Home() {
         >
           {t("home_page_title")}
         </Typography>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <img style={{ width: "25vw", marginLeft: "1vw", marginBottom: "1vh" }} src={israeli_flag} alt="israel flag" />
+        </div>
         <Typography variant="h5" align="center">
           {t("home_page_title_offer")}
         </Typography>
@@ -54,7 +58,7 @@ export default function Home() {
           {t("home_page_title_offer2")}
         </Typography>
       </div>
-      <div id={"image_gallery_home"} style={{marginBottom:"2vh"}}>
+      <div id={"image_gallery_home"} style={{ marginBottom: "2vh" }}>
         <ImageGallery
           items={images}
           defaultImage={defaultImage}
@@ -64,7 +68,7 @@ export default function Home() {
           lazyLoad={true}
           showPlayButton={false}
           renderCustomControls={someComponent}
-          description 
+          description
         />
       </div>
       <div>
@@ -87,4 +91,4 @@ export const query = graphql`
       }
     }
   }
-`;
+`
