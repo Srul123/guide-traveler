@@ -5,19 +5,26 @@
  */
 
 module.exports = {
-  /* Your site config here D:\Israel Heiblum\projects\pepe_project\guide-traveler\static\home */
+  siteMetadata: {
+    title: "Pepe Tours Israel",
+    description: "Pepe Tours - Certified Tourist Guide in Israel",
+    keywords: "Pepe Tours, Certified Tourist Guide, Israel",
+    url: "https://www.pepe-tours.com"
+  },
+  /* Your site config here  */
   plugins: [
+    "gatsby-plugin-react-helmet",
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'Pepe Tours Logo',
-        short_name: 'Pepe Tours',
-        start_url: '/',
-        background_color: '#f7f0eb',
-        theme_color: '#a2466c',
-        display: 'standalone',
-        icon: 'static/home/israeli_flag.jpg',
-      },
+        name: "Pepe Tours Logo",
+        short_name: "Pepe Tours",
+        start_url: "/",
+        background_color: "#f7f0eb",
+        theme_color: "#a2466c",
+        display: "standalone",
+        icon: "static/home/israeli_flag.jpg"
+      }
     },
     {
       resolve: `gatsby-source-filesystem`,
@@ -27,7 +34,7 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-sass`,
+      resolve: `gatsby-plugin-sass`
     },
     {
       resolve: `gatsby-plugin-react-i18next`,
@@ -36,7 +43,7 @@ module.exports = {
         languages: [`en`, `es`],
         defaultLanguage: `es`,
         // if you are using Helmet, you must include siteUrl, and make sure you add http:https
-        siteUrl: `https://example.com/`,
+        siteUrl: `https://www.pepe-tours.com`,
         // you can pass any i18next options
         // pass following options to allow message content as a key
         i18nextOptions: {
@@ -48,16 +55,16 @@ module.exports = {
         },
         pages: [
           {
-            matchPath: '/:lang?/blog/:uid',
+            matchPath: "/:lang?/blog/:uid",
             getLanguageFromPath: true,
-            excludeLanguages: ['es']
+            excludeLanguages: ["es"]
           },
           {
-            matchPath: '/preview',
-            languages: ['en']
+            matchPath: "/preview",
+            languages: ["es"]
           }
         ]
       }
     }
-  ],
+  ]
 }
